@@ -57,18 +57,12 @@ export const metadata: Metadata = {
     locale: 'fr_CH',
     type: 'website',
 	images: [
-		{
-		  url: '/web-app-manifest-512x512.png',
-		  width: 512,
-		  height: 512,
-		  alt: 'Denis Gremaud Logo',
-		},
-		{
-			url: '/web-app-manifest-192x192.png',
-			width: 192,
-			height: 192,
-			alt: 'Denis Gremaud Logo',
-		}
+	  {
+		url: '/web-app-manifest-512x512.png',
+		width: 512,
+		height: 512,
+		alt: 'Denis Gremaud | Portfolio',
+	  },
 	],
   },
   twitter: {
