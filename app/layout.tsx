@@ -58,7 +58,7 @@ export const metadata: Metadata = {
     type: 'website',
 	images: [
 	  {
-		url: '/web-app-manifest-512x512.png',
+		url: '/og-image.png',
 		width: 512,
 		height: 512,
 		alt: 'Denis Gremaud | Portfolio',
@@ -71,7 +71,7 @@ export const metadata: Metadata = {
     description: 'This is Denis Gremaud\'s portfolio.',
     images: [
 		{
-			url: '/web-app-manifest-512x512.png',
+			url: '/og-image.png',
 			width: 512,
 			height: 512,
 			alt: 'Denis Gremaud | Portfolio',
