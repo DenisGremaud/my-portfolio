@@ -49,26 +49,26 @@ const ProjectCard: FC<ProjectCardProps> = ({
 		  
 		  <div className="flex gap-4">
 			{githubUrl && (
-			  <a
+			  <Link
 				href={githubUrl}
 				target="_blank"
 				rel="noopener noreferrer"
 				className="flex items-center gap-2 text-neutral-700 dark:text-neutral-300 hover:text-neutral-900 dark:hover:text-neutral-100 transition-colors"
 			  >
-				<Code2 size={20} />
-				<span>Code</span>
-			  </a>
+          <Code2 size={20} />
+          <span>Code</span>
+			  </Link>
 			)}
 			{liveUrl && (
-			  <a
+			  <Link
 				href={liveUrl}
 				target="_blank"
 				rel="noopener noreferrer"
 				className="flex items-center gap-2 text-neutral-700 dark:text-neutral-300 hover:text-neutral-900 dark:hover:text-neutral-100 transition-colors"
 			  >
-				<ExternalLink size={20} />
-				<span>Live Demo</span>
-			  </a>
+          <ExternalLink size={20} />
+          <span>Live Demo</span>
+			  </Link>
 			)}
 		  </div>
 		</div>
