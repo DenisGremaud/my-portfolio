@@ -23,6 +23,11 @@ export const metadata: Metadata = {
 		type: 'image/png',
 	  },
 	  {
+		url: '/icon-512x512.png',
+		sizes: '512x512',
+		type: 'image/png',
+	  },
+	  {
 		url: '/favicon.ico',
 		sizes: 'any',
 		type: 'image/x-icon',
@@ -63,12 +68,13 @@ export const metadata: Metadata = {
 		height: 192,
 		alt: 'Denis Gremaud | Portfolio',
 	  },
+	  {
+		url: 'icon-512x512.png',
+		width: 512,
+		height: 512,
+		alt: 'Denis Gremaud | Portfolio',
+	  }
 	]
-  },
-  twitter: {
-    card: 'summary_large_image',
-    title: 'Denis Gremaud | Portfolio',
-    description: 'This is Denis Gremaud\'s portfolio.',
   },
   robots: {
     index: true,
