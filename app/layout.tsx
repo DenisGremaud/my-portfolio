@@ -62,6 +62,12 @@ export const metadata: Metadata = {
 		  width: 512,
 		  height: 512,
 		  alt: 'Denis Gremaud Logo',
+		},
+		{
+			url: '/web-app-manifest-192x192.png',
+			width: 192,
+			height: 192,
+			alt: 'Denis Gremaud Logo',
 		}
 	],
   },
