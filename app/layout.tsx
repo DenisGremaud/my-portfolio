@@ -15,6 +15,14 @@ export const metadata: Metadata = {
     template: '%s | Denis Gremaud',
   },
   description: 'This is Denis Gremaud\'s portfolio.',
+  icons: {
+    icon: [
+      {
+        url: '/favicon.ico',
+        sizes: 'any',
+      },
+    ]
+  },
   openGraph: {
     title: 'Denis Gremaud | Portfolio',
     description: 'This is Denis Gremaud\'s portfolio.',
