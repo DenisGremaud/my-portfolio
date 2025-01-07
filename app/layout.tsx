@@ -15,33 +15,6 @@ export const metadata: Metadata = {
     template: '%s | Denis Gremaud',
   },
   description: 'This is Denis Gremaud\'s portfolio.',
-  icons: {
-    icon: [
-      {
-        url: '/favicon.ico',
-        sizes: 'any',
-      },
-      {
-        url: '/icon.png',
-        type: 'image/png',
-      }
-    ],
-    apple: [
-      {
-        url: '/apple-icon.png',
-        type: 'image/png',
-      },
-    ],
-    other: [
-      {
-        rel: 'mask-icon',
-        url: '/icon.svg',
-        color: '#000000',
-      },
-    ],
-  },
-  manifest: '/manifest.json',
-  applicationName: 'denisgremaud',
   openGraph: {
     title: 'Denis Gremaud | Portfolio',
     description: 'This is Denis Gremaud\'s portfolio.',
