@@ -69,7 +69,14 @@ export const metadata: Metadata = {
     card: 'summary_large_image',
     title: 'Denis Gremaud | Portfolio',
     description: 'This is Denis Gremaud\'s portfolio.',
-    images: ['/web-app-manifest-512x512.png'],
+    images: [
+		{
+			url: '/web-app-manifest-512x512.png',
+			width: 512,
+			height: 512,
+			alt: 'Denis Gremaud | Portfolio',
+		}
+	],
   },
   robots: {
     index: true,
