@@ -21,8 +21,27 @@ export const metadata: Metadata = {
         url: '/favicon.ico',
         sizes: 'any',
       },
-    ]
+      {
+        url: '/icon.png',
+        type: 'image/png',
+      }
+    ],
+    apple: [
+      {
+        url: '/apple-icon.png',
+        type: 'image/png',
+      },
+    ],
+    other: [
+      {
+        rel: 'mask-icon',
+        url: '/icon.svg',
+        color: '#000000',
+      },
+    ],
   },
+  manifest: '/manifest.json',
+  applicationName: 'denisgremaud',
   openGraph: {
     title: 'Denis Gremaud | Portfolio',
     description: 'This is Denis Gremaud\'s portfolio.',
@@ -60,6 +79,9 @@ export default function RootLayout({
         GeistMono.variable
       )}
     >
+      <head>
+        <meta name="apple-mobile-web-app-title" content="denisgremaud" />
+      </head>
       <body className="antialiased max-w-xl mx-4 mt-8 lg:mx-auto">
         <main className="flex-auto min-w-0 mt-6 flex flex-col px-2 md:px-0">
           <Navbar />
