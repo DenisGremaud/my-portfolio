@@ -56,27 +56,11 @@ export const metadata: Metadata = {
     siteName: 'Denis Gremaud | Portfolio',
     locale: 'fr_CH',
     type: 'website',
-	images: [
-	  {
-		url: 'public/og-image.png',
-		width: 512,
-		height: 512,
-		alt: 'Denis Gremaud | Portfolio',
-	  },
-	],
   },
   twitter: {
     card: 'summary_large_image',
     title: 'Denis Gremaud | Portfolio',
     description: 'This is Denis Gremaud\'s portfolio.',
-    images: [
-		{
-			url: 'public/og-image.png',
-			width: 512,
-			height: 512,
-			alt: 'Denis Gremaud | Portfolio',
-		}
-	],
   },
   robots: {
     index: true,
