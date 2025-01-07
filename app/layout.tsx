@@ -23,11 +23,6 @@ export const metadata: Metadata = {
 		type: 'image/png',
 	  },
 	  {
-		url: '/icon-512x512.png',
-		sizes: '512x512',
-		type: 'image/png',
-	  },
-	  {
 		url: '/favicon.ico',
 		sizes: 'any',
 		type: 'image/x-icon',
@@ -66,12 +61,6 @@ export const metadata: Metadata = {
 		url: 'icon.png',
 		width: 192,
 		height: 192,
-		alt: 'Denis Gremaud | Portfolio',
-	  },
-	  {
-		url: 'icon-512x512.png',
-		width: 512,
-		height: 512,
 		alt: 'Denis Gremaud | Portfolio',
 	  }
 	]
