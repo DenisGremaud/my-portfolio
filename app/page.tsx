@@ -14,9 +14,10 @@ export default function Page() {
         <h2 className="mb-4 text-xl font-semibold tracking-tighter">Projects</h2>
         <ProjectsGrid />
       </div>
-      <div className="my-8">
+      {/* <div className="my-8">
+        <h2 className="mb-4 text-xl font-semibold tracking-tighter">Blog Posts</h2>
         <BlogPosts />
-      </div>
+      </div> */}
     </section>
   )
 }
