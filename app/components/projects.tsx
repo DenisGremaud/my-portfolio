@@ -13,6 +13,10 @@ interface ProjectCardProps {
   imageUrl?: string;
 }
 
+const truncateText = (text: string, maxLength: number) => {
+  return text.length > maxLength ? text.slice(0, maxLength) + '...' : text;
+};
+
 const ProjectCard: FC<ProjectCardProps> = ({
 	title,
 	description,
@@ -34,7 +38,7 @@ const ProjectCard: FC<ProjectCardProps> = ({
 			</div>
 		  )}
 		  <h3 className="text-2xl font-bold">{title}</h3>
-		  <p className="text-neutral-700 dark:text-neutral-300">{description}</p>
+		  <p className="text-neutral-700 dark:text-neutral-300">{truncateText(description, 120)}</p>
 		  
 		  <div className="flex flex-wrap gap-2">
 			{technologies.map((tech) => (
@@ -85,6 +89,13 @@ const ProjectsGrid = () => {
       githubUrl: 'https://github.com/DenisGremaud/my-portfolio',
       liveUrl: 'https://denisgremaud.me',
       imageUrl: '/api/img/projects/portfolio.jpeg',
+    },
+    {
+      title: 'FlowRide',
+      description: 'A unified mobility platform that streamlines urban transportation. This innovative solution integrates multiple transport options into one intuitive interface, optimizing routes while promoting sustainable and cost-effective travel.',
+      technologies: ['NestJs', 'TypeScript', 'Ionic', 'OTP', 'MapLibre'],
+      liveUrl: 'https://app.flowride.org',
+      imageUrl: '/api/img/projects/flowride.png',
     },
   ];
 
