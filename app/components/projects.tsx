@@ -28,15 +28,15 @@ const ProjectCard: FC<ProjectCardProps> = ({
 	return (
 	  <div className="group rounded-lg border border-neutral-200 dark:border-neutral-700 bg-white dark:bg-black p-6 transition-all hover:border-neutral-400 dark:hover:border-neutral-500">
 		<div className="flex flex-col gap-4">
-		{imageUrl && (
-			<div className="relative w-full h-48 overflow-hidden rounded-lg mt-2">
-			  <img
-				src={imageUrl}
-				alt={`${title} preview`}
-				className="object-cover w-full h-full transition-transform group-hover:scale-105"
-			  />
-			</div>
-		  )}
+      {imageUrl && (
+        <div className="relative w-full overflow-hidden rounded-lg mt-2">
+          <img
+            src={imageUrl}
+            alt={`${title} preview`}
+            className="w-full object-contain transition-transform group-hover:scale-105"
+          />
+        </div>
+      )}
 		  <h3 className="text-2xl font-bold">{title}</h3>
 		  <p className="text-neutral-700 dark:text-neutral-300">{truncateText(description, 120)}</p>
 		  
@@ -89,6 +89,14 @@ const ProjectsGrid = () => {
       githubUrl: 'https://github.com/DenisGremaud/my-portfolio',
       liveUrl: 'https://denisgremaud.me',
       imageUrl: '/api/img/projects/portfolio.jpeg',
+    },
+    {
+      title: 'UNIL Chatbot',
+      description: 'As part of my Bachelor’s project in Computer Science and Communication Systems at HEPIA, I designed and developed a chatbot based on "Retrieval Augmented Generation" (RAG) technology for the University of Lausanne. This project aimed to provide simplified access to UNIL\'s institutional statistics, enabling users to ask questions in natural language and receive accurate answers in the form of figures and charts. By integrating vector databases and advanced language models (GPT-4 by OpenAI), the chatbot enhances the user experience by making information retrieval effortless and eliminating the need for prior technical skills.',
+      technologies: ['Python', 'LangChain', 'React', 'Docker', 'OpenAI', 'PostgreSQL', 'ChromaDB'],
+      githubUrl: 'https://github.com/chatbot-unil/chatbot_project',
+      liveUrl: 'https://tb.denisgremaud.me',
+      imageUrl: '/api/img/projects/tb.png',
     },
     {
       title: 'FlowRide',
