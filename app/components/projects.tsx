@@ -87,7 +87,7 @@ const ProjectsGrid = () => {
       technologies: ['Next.js', 'TypeScript', 'Tailwind CSS'],
       githubUrl: 'https://github.com/DenisGremaud/my-portfolio',
       liveUrl: 'https://denisgremaud.me',
-      imageUrl: '/api/img/projects/portfolio.jpeg',
+      imageUrl: '/api/img/projects/portfolio.png',
     },
     {
       title: 'UNIL Chatbot',
