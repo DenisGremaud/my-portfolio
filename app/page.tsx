@@ -12,7 +12,9 @@ export default function Page() {
         Computer Engineering graduate passionate about web development and AI. I combine a solid education from <Link href={`https://www.hesge.ch/hepia/`} target="_blank" rel="noopener noreferrer" className='font-bold underline'>HEPIA</Link> with a keen interest in innovation. Currently seeking opportunities to create impactful technological solutions.
       </p>
       <div className="my-8">
-        <h2 className="mb-4 text-xl font-semibold tracking-tighter">Projects</h2>
+		<Link href="/projects">
+        	<h2 className="mb-4 text-xl font-semibold tracking-tighter">Projects</h2>
+		</Link>
         <ProjectsGrid />
       </div>
       {/* <div className="my-8">
