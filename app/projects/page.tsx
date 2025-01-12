@@ -1,6 +1,8 @@
 import WIP from '@/components/wip';
+import { siteMetadata } from '@/app/metadata';
 
 export const metadata = {
+  ...siteMetadata,
   title: 'Projects | Denis Gremaud',
   description: 'Learn more about Denis Gremaud\'s projects.',
 };

@@ -1,6 +1,8 @@
-import { BlogPosts } from 'app/components/posts'
+import { BlogPosts } from '@/app/components/posts'
+import { siteMetadata } from '@/app/metadata'
 
 export const metadata = {
+  ...siteMetadata,
   title: 'Blog',
   description: 'Read my blog.',
 }
