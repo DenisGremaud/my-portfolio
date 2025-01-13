@@ -16,7 +16,7 @@ const ProjectCard: FC<ProjectCardProps> = ({
   imageUrl,
 }) => {
   return (
-    <div className="group rounded-lg border bg-backgroundLight dark:bg-backgroundDark border-neutral-200 dark:border-neutral-700 p-6 transition-all hover:border-neutral-400 dark:hover:border-neutral-500 shadow-md">
+    <div className="group rounded-lg border bg-backgroundLight dark:bg-backgroundDark border-neutral-200 dark:border-neutral-700 p-6 transition-all hover:border-neutral-400 dark:hover:border-neutral-500">
       <div className="flex flex-col gap-4">
         {/* Image */}
         {imageUrl && (
