@@ -1,0 +1,220 @@
+---
+title: 'Setting Up ESLint, Husky, and Lint-Staged for Every Project'
+publishedAt: '2024-01-19'
+summary: 'Learn how to set up ESLint, Husky, and Lint-Staged to automate code quality checks and formatting before every commit, ensuring clean and consistent code in your JavaScript/TypeScript projects.'
+---
+
+# Setting Up ESLint, Husky, and Lint-Staged for Every Project
+
+In modern JavaScript/TypeScript projects, ensuring code quality and consistency is essential. One of the best practices is to automate linting and formatting checks before committing code. In this article, we will walk through setting up **ESLint**, **Husky**, and **Lint-Staged** so that every new project is ready for clean and consistent code from the start.
+
+## Prerequisites
+
+Before starting, ensure you have the following installed:
+
+- **Node.js** (v16 or higher recommended)
+- **pnpm** (preferred package manager for this guide)
+
+---
+
+## Step 1: Initialize a New Project
+
+Start by creating a new project and initializing it with a `package.json` file:
+
+```bash
+mkdir my-new-project && cd my-new-project
+pnpm init -y
+```
+
+---
+
+## Step 2: Install Dependencies
+
+Install the required dependencies:
+
+```bash
+pnpm add -D eslint husky lint-staged @typescript-eslint/eslint-plugin @typescript-eslint/parser eslint-config-prettier eslint-plugin-prettier prettier
+```
+
+---
+
+## Step 3: Configure ESLint
+
+Create an `eslint.config.mjs` file in the root of your project:
+
+```javascript
+import typescriptEslint from '@typescript-eslint/eslint-plugin';
+import tsParser from '@typescript-eslint/parser';
+import prettier from 'eslint-config-prettier';
+import prettierPlugin from 'eslint-plugin-prettier';
+import path from 'node:path';
+import { fileURLToPath } from 'node:url';
+import js from '@eslint/js';
+import { FlatCompat } from '@eslint/eslintrc';
+
+const __filename = fileURLToPath(import.meta.url);
+const __dirname = path.dirname(__filename);
+
+const compat = new FlatCompat({
+  baseDirectory: __dirname,
+  recommendedConfig: js.configs.recommended,
+  allConfig: js.configs.all,
+});
+
+export default [
+  // Extend recommended ESLint, TypeScript, and Prettier configurations
+  ...compat.extends(
+    'eslint:recommended',
+    'plugin:@typescript-eslint/recommended',
+    'prettier'
+  ),
+  {
+    ignores: ['node_modules', '.next', 'dist', 'build'],
+  },
+  {
+    plugins: {
+      '@typescript-eslint': typescriptEslint,
+    },
+    languageOptions: {
+      parser: tsParser,
+      parserOptions: {
+        ecmaVersion: 'latest', // Use the latest ECMAScript version
+        sourceType: 'module', // Enable ECMAScript modules
+        ecmaFeatures: {
+          jsx: true, // Enable JSX parsing if needed
+        },
+      },
+    },
+    rules: {
+      'prettier/prettier': 'error',
+      '@typescript-eslint/no-unused-vars': ['error'],
+      quotes: ['error', 'single'],
+      semi: ['error', 'always'],
+    },
+  },
+];
+```
+
+---
+
+## Step 4: Configure Prettier
+
+Create a `.prettierrc` file to define your Prettier settings:
+
+```json
+{
+  "semi": true,
+  "tabWidth": 2,
+  "printWidth": 80,
+  "singleQuote": true,
+  "trailingComma": "es5",
+  "bracketSpacing": true
+}
+```
+
+---
+
+## Step 5: Initialize Husky
+
+Run the following command to initialize Husky:
+
+```bash
+pnpm dlx husky-init
+```
+
+This creates a `.husky` directory and a `pre-commit` hook.
+
+---
+
+## Step 6: Add Lint-Staged to Husky
+
+Edit the `.husky/pre-commit` file to run `lint-staged`:
+
+```bash
+#!/bin/sh
+. "$(dirname "$0")/_/husky.sh"
+
+pnpm lint-staged
+```
+
+Make sure the file is executable:
+
+```bash
+chmod +x .husky/pre-commit
+```
+
+---
+
+## Step 7: Configure Lint-Staged
+
+Add a `lint-staged` configuration to your `package.json`:
+
+```json
+"lint-staged": {
+  "**/*.{js,ts,tsx}": [
+    "eslint --fix"
+  ]
+}
+```
+
+Alternatively, create a `lint-staged.config.js` file:
+
+```javascript
+export default {
+  '**/*.{js,ts,tsx}': ['eslint --fix'],
+};
+```
+
+---
+
+## Step 8: Test the Setup
+
+1. Make some changes to a `.js`, `.ts`, or `.tsx` file.
+2. Stage the changes:
+   ```bash
+   git add .
+   ```
+3. Commit the changes:
+   ```bash
+   git commit -m "Test lint-staged with Husky"
+   ```
+
+If everything is configured correctly, ESLint will automatically run on the staged files, fix any issues it can, and block the commit if there are remaining errors.
+
+---
+
+## Full Example `package.json`
+
+Here’s how the `package.json` should look after setup:
+
+```json
+{
+  "name": "my-new-project",
+  "version": "1.0.0",
+  "scripts": {
+    "prepare": "husky install",
+    "lint": "eslint '**/*.{js,ts,tsx}' --fix"
+  },
+  "lint-staged": {
+    "**/*.{js,ts,tsx}": [
+      "eslint --fix"
+    ]
+  },
+  "devDependencies": {
+    "eslint": "^9.0.0",
+    "husky": "^8.0.0",
+    "lint-staged": "^14.0.0",
+    "@typescript-eslint/eslint-plugin": "^6.0.0",
+    "@typescript-eslint/parser": "^6.0.0",
+    "eslint-config-prettier": "^9.0.0",
+    "eslint-plugin-prettier": "^5.0.0",
+    "prettier": "^3.0.0"
+  }
+}
+```
+
+---
+
+## Conclusion
+
+By following these steps, you ensure that every project starts with a robust linting and formatting setup. This improves code quality, enforces consistency, and reduces the risk of introducing bugs. With tools like Husky, Lint-Staged, and ESLint, you can automate these checks and focus on building great features!
