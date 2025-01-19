@@ -1,11 +1,11 @@
-import { BlogPosts } from '@/app/components/posts'
-import { siteMetadata } from '@/app/metadata'
+import { BlogPosts } from '@/app/components/posts';
+import { siteMetadata } from '@/app/metadata';
 
 export const metadata = {
   ...siteMetadata,
   title: 'Blog',
   description: 'Read my blog.',
-}
+};
 
 export default function Page() {
   return (
@@ -15,5 +15,5 @@ export default function Page() {
       </h1>
       <BlogPosts />
     </section>
-  )
+  );
 }

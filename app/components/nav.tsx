@@ -26,24 +26,28 @@ export function Navbar() {
       <div className="w-full max-w-7xl mx-auto">
         <nav className="flex items-center justify-between px-4 py-4">
           {/* Logo */}
-          <Link href="/" className="flex items-center">
-		  	<MyLogo className="h-10 w-auto transition-all hover:scale-110" />
+          <Link
+            href="/"
+            className="flex items-center"
+            onClick={() => setIsOpen(false)}
+          >
+            <MyLogo className="h-10 w-auto transition-all hover:scale-110" />
           </Link>
 
           {/* Desktop Navigation */}
           <div className="hidden md:flex space-x-8 text-lg">
             {Object.entries(navItems).map(([path, { name }]) => (
-				<Link
-					key={path}
-					href={path}
-					className={`transition-all px-3 py-2 rounded-md ${
-					pathname === path
-						? 'text-neutral-900 dark:text-white font-medium bg-neutral-100 dark:bg-neutral-800'
-						: 'text-neutral-600 dark:text-neutral-400 hover:text-neutral-900 dark:hover:text-white hover:bg-neutral-50 dark:hover:bg-neutral-800/50'
-					}`}
-				>
-					{name}
-				</Link>
+              <Link
+                key={path}
+                href={path}
+                className={`transition-all px-3 py-2 rounded-md ${
+                  pathname === path
+                    ? 'text-neutral-900 dark:text-white font-medium bg-neutral-100 dark:bg-neutral-800'
+                    : 'text-neutral-600 dark:text-neutral-400 hover:text-neutral-900 dark:hover:text-white hover:bg-neutral-50 dark:hover:bg-neutral-800/50'
+                }`}
+              >
+                {name}
+              </Link>
             ))}
           </div>
 
@@ -74,7 +78,7 @@ export function Navbar() {
                       ? 'text-neutral-900 dark:text-white font-medium bg-neutral-100 dark:bg-neutral-800 rounded-md'
                       : 'text-neutral-600 dark:text-neutral-400 hover:text-neutral-900 dark:hover:text-white'
                   }`}
-                  onClick={() => setIsOpen(false)}
+                  onClick={() => setIsOpen(!isOpen)}
                 >
                   {name}
                 </Link>

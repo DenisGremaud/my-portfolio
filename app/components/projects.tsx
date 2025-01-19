@@ -29,7 +29,9 @@ const ProjectCard: FC<ProjectCardProps> = ({
           </div>
         )}
         {/* Title */}
-        <h3 className="text-2xl font-bold text-textLight dark:text-textDark">{title}</h3>
+        <h3 className="text-2xl font-bold text-textLight dark:text-textDark">
+          {title}
+        </h3>
 
         {/* Description */}
         <p className="text-neutral-700 dark:text-neutral-300">

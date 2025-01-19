@@ -11,19 +11,20 @@ export async function GET(
     // Join all path segments to create the full image path
     // Example: /api/img/projects/portfolio.png -> app/img/projects/portfolio.png
     const imagePath = path.join(process.cwd(), 'app', 'img', ...params.path);
-    
+
     // Read the image file into a buffer
     const fileBuffer = await fs.promises.readFile(imagePath);
-    
+
     // Get file extension and map to correct MIME type
     const ext = path.extname(imagePath).toLowerCase();
-    const contentType = {
-      '.png': 'image/png',
-      '.jpg': 'image/jpeg',
-      '.jpeg': 'image/jpeg',
-      '.gif': 'image/gif',
-      '.svg': 'image/svg+xml',
-    }[ext] || 'application/octet-stream';
+    const contentType =
+      {
+        '.png': 'image/png',
+        '.jpg': 'image/jpeg',
+        '.jpeg': 'image/jpeg',
+        '.gif': 'image/gif',
+        '.svg': 'image/svg+xml',
+      }[ext] || 'application/octet-stream';
 
     // Return the image with proper headers
     return new NextResponse(fileBuffer, {
@@ -33,6 +34,6 @@ export async function GET(
       },
     });
   } catch (error) {
-    return new NextResponse('Image not found', { status: 404 });
+    return new NextResponse(error.message, { status: 404 });
   }
 }

@@ -7,7 +7,7 @@ import { useTheme } from 'next-themes';
 const MyLogo: FC<LogoProps> = ({
   width = 40,
   height = 40,
-  className = '',  // Default to empty string
+  className = '', // Default to empty string
 }) => {
   const { systemTheme } = useTheme(); // Directly access the system theme
 
@@ -19,7 +19,7 @@ const MyLogo: FC<LogoProps> = ({
       height={height}
       viewBox="0 0 294.11664 310.21048"
       xmlns="http://www.w3.org/2000/svg"
-      className={className}  // Apply className to svg element
+      className={className} // Apply className to svg element
     >
       <path
         fill={fillColor}
@@ -31,7 +31,7 @@ const MyLogo: FC<LogoProps> = ({
           d="m 220.8864,309.86722 c -35.37396,3.2415 -75.63345,-21.49634 -86.70758,-59.30793 -1.11978,-3.8233 -1.23593,-6.59332 1.85428,-9.79724 8.22009,-8.52252 7.94809,-8.5227 18.49069,-3.42419 4.03162,1.94959 6.45801,4.32788 7.77411,8.80902 5.95135,20.26257 30.84985,37.50607 55.14844,36.0379 24.29859,-1.46817 38.81402,24.44094 3.44006,27.68244 z"
         />
         <path
-		  fill={fillColor}
+          fill={fillColor}
           d="m 206.68753,309.92571 c 35.37396,3.2415 75.63345,-21.49634 86.70758,-59.30793 1.11978,-3.8233 1.23593,-6.59332 -1.85428,-9.79724 -8.22009,-8.52252 -7.94809,-8.5227 -18.49069,-3.42419 -4.03162,1.94959 -6.45801,4.32788 -7.77411,8.80902 -5.95135,20.26257 -30.84985,37.50607 -55.14844,36.0379 -24.29859,-1.46817 -38.81402,24.44094 -3.44006,27.68244 z"
         />
       </g>

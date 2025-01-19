@@ -1,7 +1,7 @@
 export interface LogoProps {
   width?: number;
   height?: number;
-  className?: string;  // Added className prop
+  className?: string; // Added className prop
 }
 
 export interface ProjectCardProps {

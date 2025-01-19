@@ -11,10 +11,10 @@ const ProjectPage = () => {
   return (
     <section>
       <h1 className="mb-8 text-2xl font-semibold tracking-tighter mt-4">
-		Projects
+        Projects
       </h1>
-	  <WIP />
-	</section>
+      <WIP />
+    </section>
   );
 };
 
