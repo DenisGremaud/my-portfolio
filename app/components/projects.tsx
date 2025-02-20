@@ -1,10 +1,10 @@
-import { FC } from 'react';
-import Link from 'next/link';
-import { Code2, ExternalLink } from 'lucide-react';
-import { ProjectCardProps } from 'app/types/types';
+import { FC } from "react";
+import Link from "next/link";
+import { Code2, ExternalLink } from "lucide-react";
+import { ProjectCardProps } from "app/types/types";
 
 const truncateText = (text: string, maxLength: number) => {
-  return text.length > maxLength ? text.slice(0, maxLength) + '...' : text;
+  return text.length > maxLength ? text.slice(0, maxLength) + "..." : text;
 };
 
 const ProjectCard: FC<ProjectCardProps> = ({
@@ -83,38 +83,38 @@ const ProjectCard: FC<ProjectCardProps> = ({
 const ProjectsGrid = () => {
   const projects = [
     {
-      title: 'Portfolio Website',
+      title: "Portfolio Website",
       description:
-        'My personal portfolio website built with Next.js, TypeScript, and Tailwind CSS. And is hosted on Railway.',
-      technologies: ['Next.js', 'TypeScript', 'Tailwind CSS'],
-      githubUrl: 'https://github.com/DenisGremaud/my-portfolio',
-      liveUrl: 'https://denisgremaud.me',
-      imageUrl: '/api/img/projects/portfolio.png',
+        "My personal portfolio website built with Next.js, TypeScript, and Tailwind CSS. And is hosted on Railway.",
+      technologies: ["Next.js", "TypeScript", "Tailwind CSS"],
+      githubUrl: "https://github.com/DenisGremaud/my-portfolio",
+      liveUrl: "https://denisgremaud.me",
+      imageUrl: "/api/img/projects/portfolio.png",
     },
     {
-      title: 'UNIL Chatbot',
+      title: "UNIL Chatbot",
       description:
         'As part of my Bachelor’s project in Computer Science and Communication Systems at HEPIA, I designed and developed a chatbot based on "Retrieval Augmented Generation" (RAG) technology for the University of Lausanne. This project aimed to provide simplified access to UNIL\'s institutional statistics, enabling users to ask questions in natural language and receive accurate answers in the form of figures and charts. By integrating vector databases and advanced language models (GPT-4 by OpenAI), the chatbot enhances the user experience by making information retrieval effortless and eliminating the need for prior technical skills.',
       technologies: [
-        'Python',
-        'LangChain',
-        'React',
-        'Docker',
-        'OpenAI',
-        'PostgreSQL',
-        'ChromaDB',
+        "Python",
+        "LangChain",
+        "React",
+        "Docker",
+        "OpenAI",
+        "PostgreSQL",
+        "ChromaDB",
       ],
-      githubUrl: 'https://github.com/chatbot-unil/chatbot_project',
-      liveUrl: 'https://tb.denisgremaud.me',
-      imageUrl: '/api/img/projects/tb.png',
+      githubUrl: "https://github.com/chatbot-unil/chatbot_project",
+      liveUrl: "https://tb.denisgremaud.me",
+      imageUrl: "/api/img/projects/tb.png",
     },
     {
-      title: 'FlowRide',
+      title: "FlowRide",
       description:
-        'A unified mobility platform that streamlines urban transportation. This innovative solution integrates multiple transport options into one intuitive interface, optimizing routes while promoting sustainable and cost-effective travel.',
-      technologies: ['NestJs', 'TypeScript', 'Ionic', 'OTP', 'MapLibre'],
-      liveUrl: 'https://app.flowride.org',
-      imageUrl: '/api/img/projects/flowride.png',
+        "A unified mobility platform that streamlines urban transportation. This innovative solution integrates multiple transport options into one intuitive interface, optimizing routes while promoting sustainable and cost-effective travel.",
+      technologies: ["NestJs", "TypeScript", "Ionic", "OTP", "MapLibre"],
+      liveUrl: "https://app.flowride.org",
+      imageUrl: "/api/img/projects/flowride.png",
     },
   ];
 

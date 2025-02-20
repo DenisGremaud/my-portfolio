@@ -14,7 +14,7 @@
     "isolatedModules": true,
     "jsx": "preserve",
     "baseUrl": ".",
-    "paths": {
+	"paths": {
       "@/*": ["./*"], // Add this line for the alias
 	  "@/components/*": ["./app/components/*"] // Adjust the alias for `components`
     },
