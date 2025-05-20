@@ -95,7 +95,7 @@ const ProjectCard: FC<ProjectCardProps> = ({
               className="flex items-center gap-2 text-textLight dark:text-textDark hover:text-accent transition-colors"
             >
               <Files size={20} />
-              <span>Documents</span>
+              <span>Files</span>
             </Link>
           )}
         </div>
