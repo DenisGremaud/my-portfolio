@@ -10,5 +10,6 @@ export interface ProjectCardProps {
   technologies: string[];
   githubUrl?: string;
   liveUrl?: string;
+  vidUrl?: string;
   imageUrl?: string;
 }

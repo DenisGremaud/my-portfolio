@@ -13,6 +13,7 @@ const ProjectCard: FC<ProjectCardProps> = ({
   technologies,
   githubUrl,
   liveUrl,
+  vidUrl,
   imageUrl,
 }) => {
   return (
@@ -74,6 +75,17 @@ const ProjectCard: FC<ProjectCardProps> = ({
               <span>Live Demo</span>
             </Link>
           )}
+          {vidUrl && (
+            <Link
+              href={vidUrl}
+              target="_blank"
+              rel="noopener noreferrer"
+              className="flex items-center gap-2 text-textLight dark:text-textDark hover:text-accent transition-colors"
+            >
+              <ExternalLink size={20} />
+              <span>Video</span>
+            </Link>
+          )}
         </div>
       </div>
     </div>
@@ -106,6 +118,7 @@ const ProjectsGrid = () => {
       ],
       githubUrl: "https://github.com/chatbot-unil/chatbot_project",
       liveUrl: "https://tb.denisgremaud.me",
+      vidUrl: "https://youtu.be/ATRSFankrLY",
       imageUrl: "/api/img/projects/tb.png",
     },
     {
