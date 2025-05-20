@@ -1,6 +1,6 @@
 import { FC } from "react";
 import Link from "next/link";
-import { Code2, ExternalLink } from "lucide-react";
+import { Code2, ExternalLink, FileVideo } from "lucide-react";
 import { ProjectCardProps } from "app/types/types";
 
 const truncateText = (text: string, maxLength: number) => {
@@ -82,7 +82,7 @@ const ProjectCard: FC<ProjectCardProps> = ({
               rel="noopener noreferrer"
               className="flex items-center gap-2 text-textLight dark:text-textDark hover:text-accent transition-colors"
             >
-              <ExternalLink size={20} />
+              <FileVideo size={20} />
               <span>Video</span>
             </Link>
           )}
