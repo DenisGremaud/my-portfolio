@@ -1,6 +1,6 @@
 import { FC } from "react";
 import Link from "next/link";
-import { Code2, ExternalLink, FileVideo } from "lucide-react";
+import { Code2, ExternalLink, FileVideo, Files } from "lucide-react";
 import { ProjectCardProps } from "app/types/types";
 
 const truncateText = (text: string, maxLength: number) => {
@@ -15,6 +15,7 @@ const ProjectCard: FC<ProjectCardProps> = ({
   liveUrl,
   vidUrl,
   imageUrl,
+  driveUrl,
 }) => {
   return (
     <div className="group rounded-lg border bg-backgroundLight dark:bg-backgroundDark border-neutral-200 dark:border-neutral-700 p-6 transition-all hover:border-neutral-400 dark:hover:border-neutral-500">
@@ -86,6 +87,17 @@ const ProjectCard: FC<ProjectCardProps> = ({
               <span>Video</span>
             </Link>
           )}
+          {driveUrl && (
+            <Link
+              href={driveUrl}
+              target="_blank"
+              rel="noopener noreferrer"
+              className="flex items-center gap-2 text-textLight dark:text-textDark hover:text-accent transition-colors"
+            >
+              <Files size={20} />
+              <span>Documents</span>
+            </Link>
+          )}
         </div>
       </div>
     </div>
@@ -121,6 +133,7 @@ const ProjectsGrid = () => {
       liveUrl: "https://tb.denisgremaud.me",
       vidUrl: "https://youtu.be/ATRSFankrLY",
       imageUrl: "/api/img/projects/tb.png",
+      driveUrl: "https://drive.proton.me/urls/M3C6N7WGPR#X5iig19hRRIy",
     },
     {
       title: "FlowRide",

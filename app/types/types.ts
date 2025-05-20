@@ -12,4 +12,5 @@ export interface ProjectCardProps {
   liveUrl?: string;
   vidUrl?: string;
   imageUrl?: string;
+  driveUrl?: string;
 }
