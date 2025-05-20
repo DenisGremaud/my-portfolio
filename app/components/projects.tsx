@@ -52,7 +52,7 @@ const ProjectCard: FC<ProjectCardProps> = ({
         </div>
 
         {/* Links */}
-        <div className="flex gap-4 mt-2">
+        <div className="grid grid-cols-2 sm:flex gap-4 mt-2">
           {githubUrl && (
             <Link
               href={githubUrl}
@@ -115,6 +115,7 @@ const ProjectsGrid = () => {
         "OpenAI",
         "PostgreSQL",
         "ChromaDB",
+        "RAG",
       ],
       githubUrl: "https://github.com/chatbot-unil/chatbot_project",
       liveUrl: "https://tb.denisgremaud.me",
