@@ -52,7 +52,7 @@ const ProjectCard: FC<ProjectCardProps> = ({
         </div>
 
         {/* Links */}
-        <div className="grid grid-cols-2 sm:flex gap-4 mt-2">
+        <div className="grid grid-cols-2 gap-4 mt-2">
           {githubUrl && (
             <Link
               href={githubUrl}
